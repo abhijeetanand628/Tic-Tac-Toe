@@ -18,7 +18,7 @@ let scoreTies = 0;
 reset.addEventListener('click', function(){
     cells.forEach(cell => {
         cell.innerHTML = '';
-        cell.classList.remove('x', 'o');
+        cell.classList.remove('x', 'o', 'sparkle');
     })
     currentTurn = 'X';
     gameActive = true;
@@ -37,7 +37,7 @@ reset.addEventListener('click', function(){
 nextRound.addEventListener('click', function(){
     cells.forEach(cell => {
         cell.innerHTML = '';
-        cell.classList.remove('x', 'o');
+        cell.classList.remove('x', 'o', 'sparkle');
     })
     currentTurn = 'X';
     gameActive = true;
@@ -101,6 +101,10 @@ function checkWin()
             scoreO++;
             scoreOElement.innerText = scoreO;
         }
+        const winningCells = winningConditions[winningIndex];
+        winningCells.forEach(index => {
+            cells[index].classList.add('sparkle');
+        });
         return;
     }
 

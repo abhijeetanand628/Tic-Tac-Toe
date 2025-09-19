@@ -155,3 +155,17 @@ body {
   .logo { font-size: 1.1rem }
 }
 
+@keyframes sparkle {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 8px rgba(255, 193, 7, 0.4);
+  }
+  50% {
+    transform: scale(1.07);
+    box-shadow: 0 0 24px rgba(255, 193, 7, 0.8);
+  }
+}
+
+.cell.sparkle {
+  animation: sparkle 2.5s infinite ease-in-out;
+}
